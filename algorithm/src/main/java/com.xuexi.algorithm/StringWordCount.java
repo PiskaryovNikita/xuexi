@@ -1,4 +1,4 @@
-package com.x.alg;
+package com.xuexi.algorithm;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,7 +7,7 @@ import java.util.Map;
 
 public class StringWordCount {
 
-  private static List<String> getWords(String s) {
+  public static List<String> getWords(String s) {
     List<String> words = new ArrayList<>();
     String regex = "^[a-zA-Z0-9-]+$";
     StringBuilder word = new StringBuilder();
@@ -27,7 +27,7 @@ public class StringWordCount {
     return words;
   }
 
-  private static Map<String, Integer> f(String s) {
+  public static Map<String, Integer> getWordCount(String s) {
     List<String> words = getWords(s);
 
     Map<String, Integer> wordCount = new HashMap<>();
@@ -46,7 +46,7 @@ public class StringWordCount {
   public static void main(String[] args) {
     List<String> words = getWords(".asdkl...asdkl...qwert12-...qwerty12..---q");
     System.out.println(words);
-    Map<String, Integer> map = f(".asdkl...asdkl...qwert12-...qwerty12..---q");
+    Map<String, Integer> map = getWordCount(".asdkl...asdkl...qwert12-...qwerty12..---q");
     System.out.println(map);
   }
 
