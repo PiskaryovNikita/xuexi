@@ -11,6 +11,7 @@
     <modules>
         <module>algorithm</module>
         <module>junit</module>
+        <module>concurrency</module>
     </modules>
 
     <properties>
