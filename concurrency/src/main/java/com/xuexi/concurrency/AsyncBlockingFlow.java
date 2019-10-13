@@ -13,12 +13,11 @@ import java.util.concurrent.Future;
 public class AsyncBlockingFlow {
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
+        ExecutorService service = Executors.newFixedThreadPool(6);
         // Within 1 flow tasks are dependant on each other, but flows aren't dependant
 
         // flows executed sequentially, when it aren't dependant
         for (int i = 0; i < 1000; i++) {
-            ExecutorService service = Executors.newFixedThreadPool(6);
-
             Future<Order> future = service.submit(getOrderTask());
 
             // blocking
@@ -34,8 +33,8 @@ public class AsyncBlockingFlow {
             // blocking
             future2.get();
 
-            service.shutdown();
         }
+        service.shutdown();
         //flow1, flow2, ..., flowN
 
         /* We want: flow1, ...
