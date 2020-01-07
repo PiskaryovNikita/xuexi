@@ -15,6 +15,7 @@
         <module>scala</module>
         <module>spring</module>
         <module>sonya</module>
+        <module>generic</module>
     </modules>
 
     <properties>
